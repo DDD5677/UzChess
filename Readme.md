@@ -8,7 +8,7 @@ If you want to check how it works, you can clone the repository and test it.
 
 1. Clone repository.
    ```
-   git clone git@github.com:DDD5677/Quiz-app.git
+   git clone git@github.com:DDD5677/UzChess.git
    ```
 3. Install all dependencies for backend.
    ```
