@@ -19,57 +19,6 @@ const options: swaggerJsdoc.Options = {
 
       components: {
          schemas: {
-            Investors: {
-               type: "object",
-               required: ["fname", "lname"],
-               properties: {
-                  fname: {
-                     type: "string",
-                     description: "firstname of user",
-                  },
-                  lname: {
-                     type: "string",
-                     description: "lastname of user",
-                  },
-                  direction: {
-                     type: "string",
-                     description:
-                        "direction of market(e.g. trade, education ets.)",
-                  },
-                  currency: {
-                     type: "string",
-                     description: "currency that investor paid",
-                  },
-                  payment_method: {
-                     type: "string",
-                     decription: "how does pay investor?",
-                  },
-                  investment_amount: {
-                     type: "integer",
-                     description: "Amount of investment",
-                  },
-                  start_profit: {
-                     type: "integer",
-                     description:
-                        " investor's profit until he gets his money back ",
-                  },
-                  continuous_profit: {
-                     type: "integer",
-                     description:
-                        " investor's profit after he gets his money back ",
-                  },
-               },
-               example: {
-                  fname: "John",
-                  lname: "Doe",
-                  direction: "trade",
-                  currency: "dollar",
-                  payment_method: "cash",
-                  investment_amount: 2000,
-                  start_profit: 30,
-                  continuous_profit: 10,
-               },
-            },
             Register: {
                type: "object",
                required: ["name", "username", "password", "age", "country"],
