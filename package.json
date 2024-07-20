@@ -1,0 +1,40 @@
+{
+   "name": "uzchess",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "server": "npx tsc && node dist/server.js",
+      "prisma": "npx prisma db push && npx prisma generate",
+      "migrate": "npx prisma migrate dev",
+      "build": "npx tsc",
+      "start": "node dist/app.js",
+      "dev": "nodemon src/app.ts"
+   },
+   "keywords": [],
+   "author": "Djumakulov Danisher",
+   "license": "ISC",
+   "dependencies": {
+      "@prisma/client": "^5.17.0",
+      "bcryptjs": "^2.4.3",
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^16.4.5",
+      "express": "^4.19.2",
+      "jsonwebtoken": "^9.0.2",
+      "swagger-jsdoc": "^6.2.8",
+      "swagger-ui-express": "^5.0.1"
+   },
+   "devDependencies": {
+      "@types/bcryptjs": "^2.4.6",
+      "@types/cookie-parser": "^1.4.7",
+      "@types/cors": "^2.8.17",
+      "@types/express": "^4.17.21",
+      "@types/jsonwebtoken": "^9.0.6",
+      "@types/swagger-jsdoc": "^6.0.4",
+      "@types/swagger-ui-express": "^4.1.6",
+      "prisma": "^5.17.0",
+      "ts-node": "^10.9.2",
+      "typescript": "^5.5.3"
+   }
+}

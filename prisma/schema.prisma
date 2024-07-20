@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+   provider = "prisma-client-js"
+}
+
+datasource db {
+   provider = "postgresql"
+   url      = env("DATABASE_URL")
+}
+
+model User {
+   id       Int     @id @default(autoincrement())
+   username String  @unique
+   password String
+   name     String
+   isAdmin  Boolean @default(false)
+   rating   Float   @default(0)
+   age      Int
+   country  String
+
+   player Player[]
+
+   @@map("users")
+}
+
+model Tournament {
+   id      Int      @id @default(autoincrement())
+   name    String
+   started DateTime
+   ended   DateTime
+
+   players Player[]
+   matches Match[]
+
+   @@map("tournaments")
+}
+
+model Player {
+   id    Int   @id @default(autoincrement())
+   score Float @default(0)
+
+   user         User       @relation(fields: [userId], references: [id])
+   userId       Int
+   tournament   Tournament @relation(fields: [tournamentId], references: [id])
+   tournamentId Int
+
+   white Match[] @relation("white")
+   black Match[] @relation("black")
+
+   @@unique([userId, tournamentId])
+   @@map("players")
+}
+
+model Match {
+   id      Int       @id @default(autoincrement())
+   won     String    @default("draw")
+   round   Int
+   started DateTime?
+   ended   DateTime?
+
+   white        Player     @relation("white", fields: [whiteId], references: [id])
+   whiteId      Int
+   black        Player     @relation("black", fields: [blackId], references: [id])
+   blackId      Int
+   tournament   Tournament @relation(fields: [tournamentId], references: [id])
+   tournamentId Int
+
+   @@map("matches")
+}
+
+model refresh {
+   userId Int    @unique
+   token  String
+}
