@@ -16,7 +16,7 @@ If you want to check how it works, you can clone the repository and test it.
    ```
 5. Create an empty `.env` file in root, copy the content of `.env.example` into it and fill in these variables.
 
-6. Run project in developer mode.
+6. Run project in development mode.
    ```
    npm install -D nodemon
    npm run dev
