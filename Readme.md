@@ -14,7 +14,7 @@ If you want to check how it works, you can clone the repository and test it.
    ```
    npm install
    ```
-5. Create an empty `.env` file in `/backend`, copy the content of `.env.example` into it and fill in these variables:
+5. Create an empty `.env` file in root, copy the content of `.env.example` into it and fill in these variables.
 
 6. Run project in developer mode.
    ```
@@ -23,6 +23,7 @@ If you want to check how it works, you can clone the repository and test it.
    ```
 7. Run project in production mode.
    ```
+   npm run build
    npm start
    ```
 9. Build project.
